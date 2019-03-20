@@ -5,6 +5,8 @@
  */
 package app.encapsulamento;
 
+import app.sistema1.Cliente;
+
 /**
  *
  * @author Diego

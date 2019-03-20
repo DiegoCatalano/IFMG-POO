@@ -5,6 +5,7 @@
  */
 package app.sistema1;
 
+import app.abstracts.Cliente;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,6 +22,7 @@ public class Main {
     //Declarei a lista de clientes fora do escopo da main
     static List<Cliente> clientes = new ArrayList<>();
     static List<Produto> produtos = new ArrayList<>();
+    static List<Venda> vendas = new ArrayList<>();
     
     public static String input(String titulo){
         return JOptionPane.showInputDialog(titulo);
@@ -62,6 +64,7 @@ public class Main {
             //Listar as descricoes de todos os produtos em que o valor informado seja maior do que x
             System.out.println("4 - Listar produtos >= x");
             //TODO: Cadastrar venda para os clientes
+            System.out.println("5 - Cadastrar venda");
             
             op = input("Digite uma opção ?");
             switch(op){
@@ -76,6 +79,9 @@ public class Main {
                 break;
                 case "4":
                     ListarProdutos();
+                break;
+                case "5":
+                    CadastrarVenda();
                 break;
             }
             
@@ -128,6 +134,24 @@ public class Main {
         }
         
         return aux;
+        
+        
+    }
+
+    private static void CadastrarVenda() {
+        
+        Cliente cli = ConsultarCpf();
+        
+        //Cliente existe
+        if(cli != null){
+            
+            //Cadastro dos produtos para esta venda
+            
+            
+            
+        } else{
+            System.out.println("Erro, cpf n cadastrado");
+        }
         
         
     }
