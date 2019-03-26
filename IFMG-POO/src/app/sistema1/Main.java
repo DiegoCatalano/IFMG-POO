@@ -5,7 +5,6 @@
  */
 package app.sistema1;
 
-import app.abstracts.Cliente;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -34,6 +33,8 @@ public class Main {
     public static void main(String[] args) {
         
         clientes.add(new Cliente("diego", "123", 20));
+        clientes.add(new Cliente("joao", "1234", 20));
+        
         produtos.add(new Produto("lapis", 30));
         produtos.add(new Produto("caneta", 20));
         produtos.add(new Produto("borracha", 50));
@@ -146,7 +147,30 @@ public class Main {
         if(cli != null){
             
             //Cadastro dos produtos para esta venda
+            List<Produto> prod = new ArrayList<>();
+            int op;
+            do {
+                
+                System.out.println("Digite o cod do produto");
+                System.out.println("Digite 0 para sair das vendas dos produtos");
+                for (int i = 0; i < produtos.size(); i++) {
+                    System.out.println((i+1) + produtos.get(i).getDesc());
+                }
+                
+                op = Integer.valueOf(input("Digite o código do produto"));
+                
+                if(op != 0){
+                    prod.add(produtos.get(op - 1));
+                }
+                
+            } while (op != 0);
             
+            double valorTotal = 0;
+            for (Produto produto : prod) {
+                valorTotal += produto.getPreco();
+            }
+            
+            vendas.add(new Venda(cli, prod, valorTotal));
             
             
         } else{

@@ -34,12 +34,12 @@ public class Main {
         //Ordernar de forma padrao
         Collections.sort(produtos);
         
-        Collections.sort(produtos, new Comparator<>() {
-            @Override
-            public int compare(Produto o1, Produto o2) {
-                return o1.getDesc().compareTo(o2.getDesc());
-            }
-        });
+//        Collections.sort(produtos, new Comparator<>() {
+//            @Override
+//            public int compare(Produto o1, Produto o2) {
+//                return o1.getDesc().compareTo(o2.getDesc());
+//            }
+//        });
     }
     
 }
