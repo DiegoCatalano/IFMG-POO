@@ -5,11 +5,14 @@
  */
 package app.abstracts;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Diego
  */
-public class Cliente {
+public class Cliente implements Cloneable{
     
     private String nome;
     private String cpf;
@@ -44,6 +47,34 @@ public class Cliente {
         this.cpf = cpf;
         this.idade = idade;
     }
+
+    @Override
+    public Cliente clone() {
+        try {
+            return (Cliente)super.clone();
+        } catch (CloneNotSupportedException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        
+        Cliente cli = (Cliente)obj;
+        if(this.cpf.equals(cli.getCpf()))
+            return true;
+        return false;
+        
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+    
+    
     
     
     
