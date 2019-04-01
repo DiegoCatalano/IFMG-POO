@@ -39,6 +39,9 @@ public class Pessoa {
         this.salario = salario;
     }
 
+    public Pessoa() {
+    }
+
     public Pessoa(String nome, int idade, double salario) {
         this.nome = nome;
         this.idade = idade;
