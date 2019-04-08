@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.comparacao;
+package app.abstracts.animals;
 
 /**
  *
@@ -15,14 +15,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Cliente a = new Cliente("a", "123");
-        Cliente b = new Cliente("b", "123");
-        
-        boolean iguais = a.equals(b);
-        
-        int stop = 0;
-        
+        // TODO code application logic here
     }
     
 }
