@@ -5,39 +5,52 @@
  */
 package app.sistema1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Diego
  */
-public class Produto implements Comparable{
-    private String desc;
-    private double preco;
+public class Produto implements Serializable{
+    
+    private String descricao;
+    private double valor;
+    private int qtdEstoque;
 
-    public String getDesc() {
-        return desc;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getValor() {
+        return valor;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
-    public Produto(String desc, double preco) {
-        this.desc = desc;
-        this.preco = preco;
+    public int getQtdEstoque() {
+        return qtdEstoque;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return Double.compare(preco, ((Produto)o).getPreco());
+    public void setQtdEstoque(int qtdEstoque) {
+        this.qtdEstoque = qtdEstoque;
     }
+
+    public Produto() {
+    }
+
+    public Produto(String descricao, double valor, int qtdEstoque) {
+        this.descricao = descricao;
+        this.valor = valor;
+        this.qtdEstoque = qtdEstoque;
+    }
+    
+    
     
     
 }

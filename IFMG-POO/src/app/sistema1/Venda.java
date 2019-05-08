@@ -5,16 +5,18 @@
  */
 package app.sistema1;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Diego
  */
-public class Venda {
+public class Venda implements Serializable{
     
     private Cliente cliente;
-    private List<Produto> produtos;
+    private ArrayList<Produto> produtos;
     private double valorTotal;
 
     public Cliente getCliente() {
@@ -29,7 +31,7 @@ public class Venda {
         return produtos;
     }
 
-    public void setProdutos(List<Produto> produtos) {
+    public void setProdutos(ArrayList<Produto> produtos) {
         this.produtos = produtos;
     }
 
@@ -41,10 +43,13 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public Venda(Cliente cliente, List<Produto> produtos, double valorTotal) {
+    public Venda() {}
+
+    public Venda(Cliente cliente, ArrayList<Produto> produtos, double valorTotal) {
         this.cliente = cliente;
         this.produtos = produtos;
         this.valorTotal = valorTotal;
     }
     
-}
+    
+} 

@@ -5,58 +5,50 @@
  */
 package app.sistema1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Diego
  */
-public class Cliente {
+public class Cliente implements Serializable{
     
     private String nome;
     private String cpf;
-    private int idade;
-    private boolean depressivo;
-    
-    //<editor-fold defaultstate="collapsed" desc="Get;Set">
+    transient private int idade;
+
     public String getNome() {
         return nome;
     }
-    
+
     public void setNome(String nome) {
-        //muitas coisas legais eu posso fazer aki
         this.nome = nome;
     }
-    
+
     public String getCpf() {
         return cpf;
     }
-    
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
+
     public int getIdade() {
         return idade;
     }
-    
+
     public void setIdade(int idade) {
         this.idade = idade;
     }
-    
-    public boolean isDepressivo() {
-        return depressivo;
-    }
-    
-    public void setDepressivo(boolean depressivo) {
-        this.depressivo = depressivo;
-    }
-    //</editor-fold>
 
-    //<editor-fold defaultstate="collapsed" desc="Construtores">
+    public Cliente() {
+    }
+
     public Cliente(String nome, String cpf, int idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
     }
-    //</editor-fold>
+
     
 }
